@@ -11,7 +11,7 @@ PORT = 3000
 .PHONY: venv run test clean
 venv: 
 	python3 -m venv $(SRC_DIR)/.venv
-	. $(SRC_DIR)/.venv/bin/activate/ && pip install -Ur $(SRC_DIR)/requirements.txt
+	. $(SRC_DIR)/.venv/bin/activate && pip install -Ur $(SRC_DIR)/requirements.txt
 	
 test: venv ## 🎯 Unit tests for FastAPI
 	. $(SRC_DIR)/bin/activate \
