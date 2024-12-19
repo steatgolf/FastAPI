@@ -15,7 +15,7 @@ venv:
 	
 test: venv ## 🎯 Unit tests for FastAPI
 	. $(SRC_DIR)/.venv/bin/activate \
-	&& pytest -v $(TEST_DIR)
+	&& pytest -v $(SRC_DIR)/$(TEST_DIR)
 
 run: venv ## 🏃 Run the server locally using Python & FastAPI
 	. $(SRC_DIR)/bin/activate \
