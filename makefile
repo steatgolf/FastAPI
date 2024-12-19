@@ -14,7 +14,7 @@ venv:
 	. $(SRC_DIR)/.venv/bin/activate && pip install -Ur $(SRC_DIR)/requirements.txt
 	
 test: venv ## 🎯 Unit tests for FastAPI
-	. $(SRC_DIR)/bin/activate \
+	. $(SRC_DIR)/.venv/bin/activate \
 	&& pytest -v $(TEST_DIR)
 
 run: venv ## 🏃 Run the server locally using Python & FastAPI
