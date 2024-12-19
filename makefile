@@ -14,16 +14,13 @@ venv:
 	. $(SRC_DIR)/.venv/bin/activate && pip install -Ur $(SRC_DIR)/requirements.txt
 	
 test: venv ## 🎯 Unit tests for FastAPI
-	. $(SRC_DIR)/.venv/bin/activate \
-	&& pytest -v $(SRC_DIR)
+	. $(SRC_DIR)/.venv/bin/activate && pytest -v $(SRC_DIR)
+	# && pytest -v $(SRC_DIR)
 
-run: venv ## 🏃 Run the server locally using Python & FastAPI
-	. $(SRC_DIR)/bin/activate \
-	&& python src/main.py
 # Clean up generated files
 clean:
 	rm -rf __pycache__ .pytest_cache .mypy_cache
-	rm -rf $(SRC_DIR)/ .venv
+	rm -rf $(SRC_DIR)/.venv
 	find . -type d -name "*.egg-info" -exec rm -rf {} +
 	find . -type d -name "*.pyc" -exec rm -rf {} +
 	find . -type d -name "*.pyo" -exec rm -rf {} +
