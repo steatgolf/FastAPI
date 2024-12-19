@@ -15,7 +15,6 @@ venv:
 	
 test: venv ## 🎯 Unit tests for FastAPI
 	. $(SRC_DIR)/.venv/bin/activate && pytest -v $(SRC_DIR)
-	# && pytest -v $(SRC_DIR)
 
 # Clean up generated files
 clean:
