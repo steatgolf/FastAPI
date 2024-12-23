@@ -24,6 +24,7 @@ jobs:
 
  sast_scan:
    name: Run Bandit Scan
+   needs: test
    runs-on: ubuntu-latest
 
    steps:
@@ -51,6 +52,7 @@ jobs:
 
  image_scan:
    name: Build Image and Run Image Scan
+   needs: sast_scan
    runs-on: ubuntu-latest
 
    steps:
